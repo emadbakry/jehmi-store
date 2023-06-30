@@ -119,12 +119,12 @@ allInputs.forEach((input) => {
 			let totalHundreds = totalInHundreds + dairyOutHundreds + bakeryOutHundreds + vedgeOutHundreds;
 			let totalFiveHundreds = totalInFiveHundreds + dairyOutFiveHundreds + bakeryOutFiveHundreds + vedgeOutFiveHundreds;
 
-			document.querySelector(".totalOut1 .unit").textContent = totalRiyals;
-			document.querySelector(".totalOut5 .unit").textContent = totalFives;
-			document.querySelector(".totalOut10 .unit").textContent = totalTens;
-			document.querySelector(".totalOut50 .unit").textContent = totalFifties;
-			document.querySelector(".totalOut100 .unit").textContent = totalHundreds;
-			document.querySelector(".totalOut500 .unit").textContent = totalFiveHundreds;
+			document.querySelector(".totalOut1 .unit").textContent = Math.round(totalRiyals);
+			document.querySelector(".totalOut5 .unit").textContent = Math.round(totalFives);
+			document.querySelector(".totalOut10 .unit").textContent = Math.round(totalTens);
+			document.querySelector(".totalOut50 .unit").textContent = Math.round(totalFifties);
+			document.querySelector(".totalOut100 .unit").textContent = Math.round(totalHundreds);
+			document.querySelector(".totalOut500 .unit").textContent = Math.round(totalFiveHundreds);
 		} catch (err) {
 			console.log(err);
 			document.querySelector(".errors span").append(`${err}`);
