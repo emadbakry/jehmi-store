@@ -66,7 +66,7 @@ label {
 	}
 	.toPrint {
 		display: block;
-		font-size: 80px;
+		font-size: 19px;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -75,9 +75,19 @@ label {
 		transform-box: fill-box;
 		position: absolute;
 		left: 50%;
-		top: 50%;
+		top: 20%;
 	}
 	.toPrint p {
 		margin: 0 4px;
+	}
+	/* body,
+	html {
+		width: 40px;
+		height: 20px;
+		aspect-ratio: 1/1;
+	} */
+	@page {
+		size: landscape;
+		margin: 0.2in;
 	}
 }

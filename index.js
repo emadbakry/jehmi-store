@@ -143,7 +143,8 @@ function print_out(sec_name, sec_amount, date) {
 
 	`;
 	printSec.innerHTML = printContent;
-	console.log(sec_name, sec_amount, date);
+	// console.log(sec_name, sec_amount, date);
+
 	window.print();
 }
 // print btns
