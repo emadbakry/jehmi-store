@@ -67,7 +67,7 @@ label {
 	.toPrint {
 		text-shadow: 200px 120px 0px rgb(91, 0, 0);
 		display: block;
-		font-size: 14px;
+		font-size: 19px;
 		/* font-size: 30px; */
 		text-align: center;
 		display: flex;
@@ -78,7 +78,7 @@ label {
 		transform-box: fill-box;
 		position: absolute;
 		left: 50%;
-		top: 20%;
+		top: 25%;
 	}
 	.toPrint p {
 		margin: 0 4px;
