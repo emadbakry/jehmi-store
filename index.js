@@ -139,7 +139,7 @@ function print_out(sec_name, sec_amount, date) {
 	let printContent = `
 	<p>${sec_name}</p>
 	<p>${sec_amount} ريال</p>
-	<p>${date}</p>
+	<p style="width:100%;">${date}</p>
 
 	`;
 	printSec.innerHTML = printContent;

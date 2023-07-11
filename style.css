@@ -65,8 +65,11 @@ label {
 		display: none;
 	}
 	.toPrint {
+		text-shadow: 200px 120px 0px rgb(91, 0, 0);
 		display: block;
-		font-size: 19px;
+		font-size: 14px;
+		/* font-size: 30px; */
+		text-align: center;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -88,6 +91,6 @@ label {
 	} */
 	@page {
 		size: landscape;
-		margin: 0.2in;
+		margin: -0.3in;
 	}
 }
