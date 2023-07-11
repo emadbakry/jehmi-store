@@ -64,4 +64,8 @@ label {
 	body > *:not(.toPrint) {
 		display: none;
 	}
+	.toPrint {
+		display: block;
+		font-size: 120px;
+	}
 }
