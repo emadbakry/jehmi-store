@@ -35,7 +35,7 @@ allInputs.forEach((input) => {
 			// dairy
 			let dairyInput = document.querySelector("#dairy");
 			let dairy = dairyInput.value || 0;
-			let dairyOut = dairy * percentage.dairy;
+			var dairyOut = dairy * percentage.dairy;
 			let dairyIn = dairy - dairyOut;
 			document.querySelector(".dairy .p-out").textContent = Math.floor(dairyOut);
 			document.querySelector(".dairy .p-in").textContent = Math.floor(dairyIn);
@@ -129,5 +129,32 @@ allInputs.forEach((input) => {
 			console.log(err);
 			document.querySelector(".errors span").append(`${err}`);
 		}
+	});
+});
+
+// printing
+function print_out(sec_name, sec_amount, date) {
+	// print div
+	let printSec = document.querySelector(".toPrint");
+	let printContent = `
+	<p>${sec_name}</p>
+	<p>${sec_amount} ريال</p>
+	<p>${date}</p>
+
+	`;
+	printSec.innerHTML = printContent;
+	console.log(sec_name, sec_amount, date);
+	window.print();
+}
+// print btns
+let printBtns = document.querySelectorAll(".btn-print button");
+// listener
+printBtns.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		print_out(
+			btn.dataset.name,
+			btn.parentElement.parentElement.querySelector(".p-out").textContent,
+			new Date().toLocaleDateString()
+		);
 	});
 });
