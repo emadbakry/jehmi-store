@@ -159,3 +159,47 @@ printBtns.forEach((btn) => {
 		);
 	});
 });
+
+// ------ print all
+let printAllBtn = document.querySelector(`.printAll .btn`);
+function printAll() {
+	let printSec = document.querySelector(".toPrint");
+	let printContent = `
+	<div>
+	<div>
+	<p>الخضار</p>
+	<p>${document.querySelector(".vedg .p-out").textContent} ريال</p>
+	<p style="width:100%;">${new Date().toLocaleDateString()}</p>
+	</div>
+	</div>
+	<br>
+
+	<div>
+	<div>
+	<p>المخبوزات</p>
+	<p>${document.querySelector(".bakery .p-out").textContent} ريال</p>
+	<p style="width:100%;">${new Date().toLocaleDateString()}</p>
+	</div>
+	</div>
+	<br>
+	<div>
+	<div>
+	<p>الألبان</p>
+	<p>${document.querySelector(".dairy .p-out").textContent} ريال</p>
+	<p style="width:100%;">${new Date().toLocaleDateString()}</p>
+	</div>
+	</div>
+	<br>
+
+	
+
+	`;
+	printSec.innerHTML = printContent;
+
+	window.print();
+}
+
+printAllBtn.addEventListener("click", () => {
+	// do something
+	printAll();
+});

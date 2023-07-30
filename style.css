@@ -59,26 +59,50 @@ label {
 	border: 1px solid red;
 	border-radius: 10px;
 }
+/* print all btn */
+.printAll {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.printAll .btn {
+	padding: 4px 8px;
+}
+.toPrint > div {
+	width: 100px;
 
+	page-break-after: always;
+}
+/* print all btn */
 @media print {
 	body > *:not(.toPrint) {
 		display: none;
 	}
 	.toPrint {
-		text-shadow: 200px 120px 0px rgb(91, 0, 0);
 		display: block;
-		font-size: 19px;
+		font-size: 15px;
 		/* font-size: 30px; */
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+		position: relative;
+	}
+	.toPrint > div {
+		min-height: 99vh;
+		min-width: 99vw;
+		position: relative;
+		padding: 0;
+	}
+	.toPrint > div > div {
 		transform: rotate(-0deg) translate(-50%, -50%);
 		transform-origin: center;
 		transform-box: fill-box;
 		position: absolute;
-		left: 50%;
-		top: 25%;
+		left: 58%;
+		top: 10%;
+		text-shadow: 200px 120px 0px rgb(23, 0, 91);
 	}
 	.toPrint p {
 		margin: 0 4px;
