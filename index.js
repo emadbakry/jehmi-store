@@ -176,7 +176,7 @@ function printAll() {
 
 	<div>
 	<div>
-	<p>المخبوزات</p>
+	<p>المخبز</p>
 	<p>${document.querySelector(".bakery .p-out").textContent} ريال</p>
 	<p style="width:100%;">${new Date().toLocaleDateString()}</p>
 	</div>
@@ -184,7 +184,7 @@ function printAll() {
 	<br>
 	<div>
 	<div>
-	<p>الألبان</p>
+	<p>الأجبان</p>
 	<p>${document.querySelector(".dairy .p-out").textContent} ريال</p>
 	<p style="width:100%;">${new Date().toLocaleDateString()}</p>
 	</div>
