@@ -1,6 +1,6 @@
 let percentage = {
 	// 10%
-	vedg: 0.9,
+	vedg: 0.88,
 	// 15%
 	bakery: 0.85,
 	// 12%
