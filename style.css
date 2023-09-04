@@ -1,170 +1,172 @@
-.flex {
-	display: flex;
-}
-.vedg,
-.bakery,
-.dairy,
-.total {
-	margin: 2rem auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	/* grid-template-rows: 150px; */
-	text-align: center;
-	align-items: center;
-}
-/* make main input the fourth */
-.input-outer:first-of-type {
-	order: 4;
-	margin-top: 50px;
-}
-.btn-print {
-	order: 5;
-	margin-top: 50px;
-}
-/* make main input the fourth */
-input {
-	height: 30px;
-}
-label {
-	font-size: 19px;
-	font-weight: 600;
-}
-.input-outer {
-	position: relative;
-	margin: 10px 0;
-}
-.total .input-outer > div {
-	display: flex;
-	align-items: center;
-	flex-direction: row-reverse;
-	text-align: start;
-}
-[data-note]:after {
-	content: attr(data-note);
-	position: absolute;
-	left: 50%;
-	top: -20px;
-	transform: translateX(-50%) rotate(-10deg);
-	color: red;
-	font-size: 12px;
-	width: 100%;
-}
-
-/* p-in-before */
-.p-in-before {
-	position: relative;
-}
-.p-in-before:before {
-	content: attr(data-vat-value) "ريال";
-	position: absolute;
-	left: 50%;
-	bottom: -30px;
-	transform: translateX(-50%);
-	color: red;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-/* p-in-before */
-/* total vat beofre element */
-.total-entered-b-vat {
-	position: relative;
-}
-.total-entered-b-vat:before {
-	content: attr(data-total-entered-b-vat) "ريال";
-	position: absolute;
-	left: 50%;
-	bottom: -45px;
-	transform: translateX(-50%);
-	color: red;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-/* total vat beofre element */
-.total span:not([class]) {
-	font-size: 12px;
-}
-.total span {
-	margin: 0 1rem;
-}
-.total label {
-	min-width: 100px;
-}
-.total .input-outer {
-	display: flex;
-	flex-direction: column;
-}
-
-.errors {
-	position: fixed;
-	left: 20px;
-	bottom: 50px;
-	border: 1px solid red;
-	border-radius: 10px;
-}
-/* print all btn */
-.printAll {
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-}
-.printAll .btn {
-	padding: 4px 8px;
-}
-.toPrint > div {
-	width: 100px;
-
-	page-break-after: always;
-}
-/* line */
-.line {
-	height: 5px;
-	background-color: #eee;
-	width: 100%;
-	border-radius: 5px;
-}
-/* line */
-/* print all btn */
-@media print {
-	body > *:not(.toPrint) {
-		display: none;
+@media (min-width: 999999px) {
+	.flex {
+		display: flex;
 	}
-	.toPrint {
-		display: block;
-		font-size: 15px;
-		/* font-size: 30px; */
+	.vedg,
+	.bakery,
+	.dairy,
+	.total {
+		margin: 2rem auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		/* grid-template-rows: 150px; */
 		text-align: center;
+		align-items: center;
+	}
+	/* make main input the fourth */
+	.input-outer:first-of-type {
+		order: 4;
+		margin-top: 50px;
+	}
+	.btn-print {
+		order: 5;
+		margin-top: 50px;
+	}
+	/* make main input the fourth */
+	input {
+		height: 30px;
+	}
+	label {
+		font-size: 19px;
+		font-weight: 600;
+	}
+	.input-outer {
+		position: relative;
+		margin: 10px 0;
+	}
+	.total .input-outer > div {
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		text-align: start;
+	}
+	[data-note]:after {
+		content: attr(data-note);
+		position: absolute;
+		left: 50%;
+		top: -20px;
+		transform: translateX(-50%) rotate(-10deg);
+		color: red;
+		font-size: 12px;
+		width: 100%;
+	}
+
+	/* p-in-before */
+	.p-in-before {
+		position: relative;
+	}
+	.p-in-before:before {
+		content: attr(data-vat-value) "ريال";
+		position: absolute;
+		left: 50%;
+		bottom: -30px;
+		transform: translateX(-50%);
+		color: red;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+	/* p-in-before */
+	/* total vat beofre element */
+	.total-entered-b-vat {
+		position: relative;
+	}
+	.total-entered-b-vat:before {
+		content: attr(data-total-entered-b-vat) "ريال";
+		position: absolute;
+		left: 50%;
+		bottom: -45px;
+		transform: translateX(-50%);
+		color: red;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+	/* total vat beofre element */
+	.total span:not([class]) {
+		font-size: 12px;
+	}
+	.total span {
+		margin: 0 1rem;
+	}
+	.total label {
+		min-width: 100px;
+	}
+	.total .input-outer {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.errors {
+		position: fixed;
+		left: 20px;
+		bottom: 50px;
+		border: 1px solid red;
+		border-radius: 10px;
+	}
+	/* print all btn */
+	.printAll {
+		margin: auto;
 		display: flex;
 		justify-content: center;
-		flex-wrap: wrap;
-		position: relative;
+		flex-direction: column;
+	}
+	.printAll .btn {
+		padding: 4px 8px;
 	}
 	.toPrint > div {
-		min-height: 99vh;
-		min-width: 99vw;
-		position: relative;
-		padding: 0;
+		width: 100px;
+
+		page-break-after: always;
 	}
-	.toPrint > div > div {
-		transform: rotate(-0deg) translate(-50%, -50%);
-		transform-origin: center;
-		transform-box: fill-box;
-		position: absolute;
-		left: 58%;
-		top: 10%;
-		text-shadow: 200px 120px 0px rgb(23, 0, 91);
+	/* line */
+	.line {
+		height: 5px;
+		background-color: #eee;
+		width: 100%;
+		border-radius: 5px;
 	}
-	.toPrint p {
-		margin: 0 4px;
-	}
-	/* body,
+	/* line */
+	/* print all btn */
+	@media print {
+		body > *:not(.toPrint) {
+			display: none;
+		}
+		.toPrint {
+			display: block;
+			font-size: 15px;
+			/* font-size: 30px; */
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			position: relative;
+		}
+		.toPrint > div {
+			min-height: 99vh;
+			min-width: 99vw;
+			position: relative;
+			padding: 0;
+		}
+		.toPrint > div > div {
+			transform: rotate(-0deg) translate(-50%, -50%);
+			transform-origin: center;
+			transform-box: fill-box;
+			position: absolute;
+			left: 58%;
+			top: 10%;
+			text-shadow: 200px 120px 0px rgb(23, 0, 91);
+		}
+		.toPrint p {
+			margin: 0 4px;
+		}
+		/* body,
 	html {
 		width: 40px;
 		height: 20px;
 		aspect-ratio: 1/1;
 	} */
-	@page {
-		size: landscape;
-		margin: -0.3in;
+		@page {
+			size: landscape;
+			margin: -0.3in;
+		}
 	}
 }
