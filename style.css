@@ -47,6 +47,7 @@ label {
 	transform: translateX(-50%) rotate(-10deg);
 	color: red;
 	font-size: 12px;
+	width: 100%;
 }
 
 /* p-in-before */
