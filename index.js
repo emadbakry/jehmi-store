@@ -1,3 +1,4 @@
+let mainVat = 1.15;
 let percentage = {
 	// 10%
 	vedg: 0.88,
@@ -11,23 +12,31 @@ allInputs.forEach((input) => {
 	input.addEventListener("input", () => {
 		try {
 			// calc all three sections
-			//
-			//
 			// vedgetable
 			let vedgeInput = document.querySelector("#vedg");
 			let vedge = vedgeInput.value || 0;
-			let vedgeOut = vedge * percentage.vedg;
-			let vedgeIn = vedge - vedgeOut;
-			console.log(vedgeOut, vedgeIn);
+			// insert value of vat in p-in-before
+			let vedgeBefore_vat = Math.floor(vedge / mainVat);
+			document.querySelector(".vedg .p-in-before").textContent = vedgeBefore_vat;
+			// insert the vat value as a attribute in p-in-before
+			document.querySelector(".vedg .p-in-before").setAttribute("data-vat-value", vedge - vedgeBefore_vat);
+			let vedgeOut = vedgeBefore_vat * percentage.vedg;
 			document.querySelector(".vedg .p-out").textContent = Math.floor(vedgeOut);
+			let vedgeIn = vedgeBefore_vat - vedgeOut;
+			console.log(vedgeOut, vedgeIn);
 			document.querySelector(".vedg .p-in").textContent = Math.floor(vedgeIn);
 			//
 			//
 			// bakery
 			let bakeryInput = document.querySelector("#bakery");
 			let bakery = bakeryInput.value || 0;
-			let bakeryOut = bakery * percentage.bakery;
-			let bakeryIn = bakery - bakeryOut;
+			// insert value of vat in p-in-before
+			let bakeryBefore_vat = Math.floor(bakery / mainVat);
+			document.querySelector(".bakery .p-in-before").textContent = bakeryBefore_vat;
+			// insert the vat value as a attribute in p-in-before
+			document.querySelector(".bakery .p-in-before").setAttribute("data-vat-value", bakery - bakeryBefore_vat);
+			let bakeryOut = bakeryBefore_vat * percentage.bakery;
+			let bakeryIn = bakeryBefore_vat - bakeryOut;
 			document.querySelector(".bakery .p-out").textContent = Math.floor(bakeryOut);
 			document.querySelector(".bakery .p-in").textContent = Math.floor(bakeryIn);
 			//
@@ -35,8 +44,14 @@ allInputs.forEach((input) => {
 			// dairy
 			let dairyInput = document.querySelector("#dairy");
 			let dairy = dairyInput.value || 0;
-			var dairyOut = dairy * percentage.dairy;
-			let dairyIn = dairy - dairyOut;
+			// insert value of vat in p-in-before
+			let dairyBefore_vat = Math.floor(dairy / mainVat);
+			document.querySelector(".dairy .p-in-before").textContent = dairyBefore_vat;
+			// insert the vat value as a attribute in p-in-before
+			document.querySelector(".dairy .p-in-before").setAttribute("data-vat-value", dairy - dairyBefore_vat);
+
+			var dairyOut = dairyBefore_vat * percentage.dairy;
+			let dairyIn = dairyBefore_vat - dairyOut;
 			document.querySelector(".dairy .p-out").textContent = Math.floor(dairyOut);
 			document.querySelector(".dairy .p-in").textContent = Math.floor(dairyIn);
 			//
@@ -44,6 +59,14 @@ allInputs.forEach((input) => {
 			let totalEntered = +vedge + +bakery + +dairy || 0;
 			document.querySelector(".total-entered").textContent = Math.floor(totalEntered) || "nothing";
 			let totalOut = vedgeOut + bakeryOut + dairyOut;
+			// insert total p-in-before's vat in the element: total-entered-b-vat
+			let totalEntered_b_vat = Math.floor(totalEntered / mainVat);
+			document.querySelector(".total-entered-b-vat").textContent = Math.floor(totalEntered_b_vat);
+			// inserty the vat value as a attribute in total-entered-b-vat
+			document
+				.querySelector(".total-entered-b-vat")
+				.setAttribute("data-total-entered-b-vat", totalEntered - totalEntered_b_vat);
+
 			// console.log(vedgeOut, bakeryOut, dairyOut);
 			// console.log(vedgeIn, bakeryIn, dairyIn);
 			let totalIn = vedgeIn + bakeryIn + dairyIn;

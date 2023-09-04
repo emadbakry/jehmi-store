@@ -7,11 +7,21 @@
 .total {
 	margin: 2rem auto;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	/* grid-template-rows: 150px; */
 	text-align: center;
 	align-items: center;
 }
-
+/* make main input the fourth */
+.input-outer:first-of-type {
+	order: 4;
+	margin-top: 50px;
+}
+.btn-print {
+	order: 5;
+	margin-top: 50px;
+}
+/* make main input the fourth */
 input {
 	height: 30px;
 }
@@ -21,6 +31,7 @@ label {
 }
 .input-outer {
 	position: relative;
+	margin: 10px 0;
 }
 .total .input-outer > div {
 	display: flex;
@@ -38,6 +49,36 @@ label {
 	font-size: 12px;
 }
 
+/* p-in-before */
+.p-in-before {
+	position: relative;
+}
+.p-in-before:before {
+	content: attr(data-vat-value) "ريال";
+	position: absolute;
+	left: 50%;
+	bottom: -30px;
+	transform: translateX(-50%);
+	color: red;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+/* p-in-before */
+/* total vat beofre element */
+.total-entered-b-vat {
+	position: relative;
+}
+.total-entered-b-vat:before {
+	content: attr(data-total-entered-b-vat) "ريال";
+	position: absolute;
+	left: 50%;
+	bottom: -45px;
+	transform: translateX(-50%);
+	color: red;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+/* total vat beofre element */
 .total span:not([class]) {
 	font-size: 12px;
 }
@@ -74,6 +115,14 @@ label {
 
 	page-break-after: always;
 }
+/* line */
+.line {
+	height: 5px;
+	background-color: #eee;
+	width: 100%;
+	border-radius: 5px;
+}
+/* line */
 /* print all btn */
 @media print {
 	body > *:not(.toPrint) {

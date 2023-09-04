@@ -13,8 +13,14 @@
 			<div class="vedg flex">
 				<div class="input-outer">
 					<label for="vedg">خضار</label>
+
 					<input type="number" name="vedg" id="vedg" />
 					<span>ريال</span>
+				</div>
+				<div class="input-outer">
+					<!-- for tenant -->
+					<span class="p-in-before">0</span>
+					<span data-note="بعد خصم الضريبة">ريال</span>
 				</div>
 				<div class="input-outer">
 					<!-- for tenant -->
@@ -39,6 +45,11 @@
 				</div>
 				<div class="input-outer">
 					<!-- for tenant -->
+					<span class="p-in-before">0</span>
+					<span data-note="بعد خصم الضريبة">ريال</span>
+				</div>
+				<div class="input-outer">
+					<!-- for tenant -->
 					<span class="p-out">0</span>
 					<span data-note="للمستأجر">ريال</span>
 				</div>
@@ -60,6 +71,11 @@
 				</div>
 				<div class="input-outer">
 					<!-- for tenant -->
+					<span class="p-in-before">0</span>
+					<span data-note="بعد خصم الضريبة">ريال</span>
+				</div>
+				<div class="input-outer">
+					<!-- for tenant -->
 					<span class="p-out">0</span>
 					<span data-note="للمستأجر">ريال</span>
 				</div>
@@ -72,11 +88,23 @@
 					<button id="print-dairy" data-name="أجبان" type="button">طباعة</button>
 				</div>
 			</div>
+			<!--
+				br 
+			-->
+			<div class="line"></div>
+			<!--
+				br 
+			-->
 			<!-- total section -->
 			<div class="total flex">
 				<div class="input-outer">
 					<span>المجموع</span>
 					<span class="total-entered">0</span>
+					<span>ريال</span>
+				</div>
+				<div class="input-outer">
+					<span>المجموع بعد خصم الضريبة</span>
+					<span class="total-entered-b-vat">0</span>
 					<span>ريال</span>
 				</div>
 				<div class="input-outer">
